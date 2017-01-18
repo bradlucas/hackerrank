@@ -97,3 +97,36 @@
   ;; 1 + x + x^2/2! + x^3/3! + ....
   ;; go to 10 terms
   (format "%.4f" (apply + (map (fn [n] (term-calc (double x) n)) (range 0 10)))))
+
+
+;; (for [line (repeatedly x read-line)] (DateFormat/parse line))
+
+(defn run-eval-ex
+  []
+  ;; read number of lines
+  ;; read each line
+  (let [num (Integer/parseInt (read-line))]
+    (println num)
+    ;;(println (map Float/parseFloat (repeatedly num read-line)))
+    ;; (for [line (repeatedly num read-line)] 
+    ;;   (println (Float/parseFloat line)))
+    (doseq [line (repeatedly read-line)]
+      (println line)
+      )
+    ;;numbers (for [line (repeatedly num (read-line))] (Float/parseFloat line))
+    ;;numbers
+    )
+  )
+
+
+;; (let [n_t (read-line) 
+;;       n (Integer/parseInt n_t)]
+;;   (loop [a0 n]
+;;     (when (> a0 0)
+;;       (let [x_t (read-line) 
+;;             x (Float/parseFloat x_t)]
+;;         (println (eval-ex x)))
+;;       (recur (- a0 1)))))
+
+
+
