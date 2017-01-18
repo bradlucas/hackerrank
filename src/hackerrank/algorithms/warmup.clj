@@ -1,6 +1,5 @@
-(ns hackerrank.algorithms
-  (:use [clojure.string :only (split triml)])
-)
+(ns hackerrank.algorithms.warmup
+  (:use [clojure.string :only (split triml)]))
 
 (defn simple-array-sum
   "https://www.hackerrank.com/challenges/simple-array-sum"
