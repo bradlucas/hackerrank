@@ -42,15 +42,58 @@
 (defn fp-filter-array
   "https://www.hackerrank.com/challenges/fp-filter-array"
   []
+  ;; TODO
 
 )
 
 
+;; Filter Positions in a List
+;; Array Of N Elements
+;; Reverse a list
+;; Sum of Odd Elements
 
-
-;; TODO new...
-
-(defn evaluating-e-to-x
-  "https://www.hackerrank.com/challenges/eval-ex"
+;; List Length
+(defn fp-list-length
+  "https://www.hackerrank.com/challenges/fp-list-length"
   []
-)
+  (let [lst [2 5 1 4 3 7 8 6 0 9]]
+    (let [f (fn[lst] (count lst))]
+      (f lst)
+      )
+    )
+  ) 
+
+;; Update List
+
+(defn exp [x y]
+  (reduce * (repeat y x)))
+
+(defn factorial 
+  [x]
+  ;; x * (x-1) * (x-2) * ... * 2 1
+  ;; 1! = 1
+  ;; 2! = 2
+  ;; 3! = 6
+  ;; 4! = 24
+  (loop [rtn x
+         x x]
+    (if (< x 3)
+      rtn
+      (recur (* rtn (dec x)) (dec x)))))
+
+(defn term-calc
+  [x n]
+  (if (= n 0) 
+    1
+    (if (= n 1)
+      x
+      (/ (exp x n) (factorial n)))))
+
+(defn eval-ex
+  "https://www.hackerrank.com/challenges/eval-ex"
+  [x]
+  ;; N is number of lines
+  ;; N lines with a value to 4 decimal places
+  ;; 1 + x + x^2/2! + x^3/3! + ....
+  ;; go to 10 terms
+  (format "%.4f" (apply + (map (fn [n] (term-calc (double x) n)) (range 0 10)))))
