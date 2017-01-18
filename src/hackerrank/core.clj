@@ -6,4 +6,4 @@
   (:gen-class))
 
 (defn -main [& args]
-  (pascals-triangle (Integer/parseInt (read-line))))
+  (run-eval-ex))
