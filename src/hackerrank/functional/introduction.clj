@@ -106,6 +106,7 @@
   ;; This didn't work
   ;; read number of lines
   ;; read each line
+  ;; http://stackoverflow.com/questions/11484113/idiomatic-way-to-write-clojure-code-for-repeatedly-reading-lines-from-the-consol
   (let [num (Integer/parseInt (read-line))]
     (println num)
     ;;(println (map Float/parseFloat (repeatedly num read-line)))
