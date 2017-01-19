@@ -91,17 +91,13 @@
       (println (clojure.string/join " " s)))))
 
 
-
-      
-
-
 (defn string-mingling
   "https://www.hackerrank.com/challenges/string-mingling"
   []
-  (println (apply str (interleave (read-line) (read-line))))
-)
+  (println (apply str (interleave (read-line) (read-line)))))
 
 
 ;; 
 ;; http://www.flyingmachinestudios.com/programming/a-taste-of-the-lambda-calculus/
 ((fn ((fn (x y)) x))(fn))
+
