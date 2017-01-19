@@ -1,5 +1,7 @@
 (ns hackerrank.functional.adhoc)
 
+;; https://www.hackerrank.com/challenges/kundu-and-bubble-wrap
+;; Timing out
 
 ;; http://math.stackexchange.com/questions/1393798/expected-value-from-popping-bubbles/1393810
 
