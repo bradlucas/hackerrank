@@ -103,6 +103,7 @@
 
 (defn run-eval-ex
   []
+  ;; This didn't work
   ;; read number of lines
   ;; read each line
   (let [num (Integer/parseInt (read-line))]
@@ -113,12 +114,13 @@
     (doseq [line (repeatedly read-line)]
       (println line)
       )
+    
     ;;numbers (for [line (repeatedly num (read-line))] (Float/parseFloat line))
     ;;numbers
     )
   )
 
-
+;; Submitted answer with stdin/stdout interface
 ;; (let [n_t (read-line) 
 ;;       n (Integer/parseInt n_t)]
 ;;   (loop [a0 n]
@@ -127,6 +129,8 @@
 ;;             x (Float/parseFloat x_t)]
 ;;         (println (eval-ex x)))
 ;;       (recur (- a0 1)))))
+
+
 
 
 
