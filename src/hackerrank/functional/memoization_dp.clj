@@ -68,11 +68,33 @@
             x (Integer/parseInt x_t)]
         (println (format-number-mod-10-8-7 (number-of-bst x))))
       (recur (- a0 1)))))
-
-
-
 )
 
 
 
+
+;; fibonacci-fp
+;; "https://www.hackerrank.com/challenges/fibonacci-fp"
+
+
+(def fib-seq (lazy-cat [0 1] (map +' (rest fib-seq) fib-seq)))
+
+(defn fibonacci
+  [n]
+  (nth fib-seq n))
+
+
+(defn submission-fibonacci-fp
+  []
+  ;; cut-paste
+(let [n_t (read-line) 
+      n (Integer/parseInt n_t)]
+  (loop [a0 n]
+    (when (> a0 0)
+      (let [x_t (read-line) 
+            x (Integer/parseInt x_t)]
+        (println (format-number-mod-10-8-7 (fibonacci x))))
+      (recur (- a0 1)))))
+
+)
 
