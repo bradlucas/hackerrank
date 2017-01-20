@@ -60,3 +60,27 @@
         ;; (apply print (compare-triplets-ex a0 a1 a2 b0 b1 b2))
         (println (apply format "%d %d" (compare-triplets-ex a0 a1 a2 b0 b1 b2)))))))
 
+
+
+
+
+
+
+
+
+
+
+
+;; Dashboard  Algorithms  Sorting  Intro to Tutorial Challenges
+;; https://www.hackerrank.com/challenges/tutorial-intro
+
+(defn get-value-index 
+  [n lst]
+  (count (take-while (partial not= n) lst))) 
+
+(let [n (Integer/parseInt (read-line))
+      cnt (Integer/parseInt (read-line))
+      arr_t (read-line)
+      arr (map #(Integer/parseInt %) (clojure.string/split arr_t #" "))
+      ]
+  (println (get-value-index n arr)))
