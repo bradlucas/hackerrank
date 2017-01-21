@@ -1,4 +1,4 @@
-(ns hackerrank.functional-programming.adhoc)
+(ns hackerrank.functional-programming.adhoc.adhoc)
 
 ;; https://www.hackerrank.com/challenges/kundu-and-bubble-wrap
 ;; Timing out

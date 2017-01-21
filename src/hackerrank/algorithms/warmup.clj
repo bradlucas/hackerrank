@@ -78,9 +78,9 @@
   [n lst]
   (count (take-while (partial not= n) lst))) 
 
-(let [n (Integer/parseInt (read-line))
-      cnt (Integer/parseInt (read-line))
-      arr_t (read-line)
-      arr (map #(Integer/parseInt %) (clojure.string/split arr_t #" "))
-      ]
-  (println (get-value-index n arr)))
+;; (let [n (Integer/parseInt (read-line))
+;;       cnt (Integer/parseInt (read-line))
+;;       arr_t (read-line)
+;;       arr (map #(Integer/parseInt %) (clojure.string/split arr_t #" "))
+;;       ]
+;;   (println (get-value-index n arr)))

@@ -1,4 +1,4 @@
-(ns hackerrank.functional-programming.recursion)
+(ns hackerrank.functional-programming.recursion.recursion)
 
 (defn divide 
   [x y]
@@ -99,5 +99,6 @@
 
 ;; 
 ;; http://www.flyingmachinestudios.com/programming/a-taste-of-the-lambda-calculus/
-((fn ((fn (x y)) x))(fn))
+;; ((fn ((fn (x y)) x))(fn))
+
 
