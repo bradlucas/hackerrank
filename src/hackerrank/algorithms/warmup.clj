@@ -100,5 +100,25 @@
 
 
 
+(defn abs
+  [n]
+  (if (neg? n) (- n) n))
 
+(defn diagonal-difference
+  "https://www.hackerrank.com/challenges/diagonal-difference"
+  [sqr]
+
+  ;; sqr -> ((1 3 2) (1 3 2) (1 3 2))
+
+  ;; diag1 = sum top left to bottom right
+  ;; diag1 = sum bottom left to top right
+
+  ;; return difference -> diag1 - diag2
+  (let [cnt (count sqr)
+        d1 (apply + (map (fn [[idx row]] (nth row idx)) (partition 2 (interleave (range cnt) sqr))))
+        d2 (apply + (map (fn [[idx row]] (nth row idx)) (partition 2 (interleave (reverse (range cnt)) sqr))))]
+    (abs (- d1 d2))))
+
+
+;; ((11 2 4) (4 5 6) (10 8 -12))
 
