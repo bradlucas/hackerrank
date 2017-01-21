@@ -84,3 +84,21 @@
 ;;       arr (map #(Integer/parseInt %) (clojure.string/split arr_t #" "))
 ;;       ]
 ;;   (println (get-value-index n arr)))
+
+
+
+(defn a-very-big-sum 
+  "https://www.hackerrank.com/challenges/a-very-big-sum"
+  [arr]
+  (apply +' arr))
+
+
+;; (let [n (Integer/parseInt (read-line))
+;;       arr (map #(Integer/parseInt %) (clojure.string/split arr_t #" "))
+;;       ]
+;;   (println (get-value-index n arr)))
+
+
+
+
+
