@@ -1,4 +1,4 @@
-(ns hackerrank.functional-programming.introduction.introduction)
+(ns hackerrank.functional.introduction.introduction)
 
 (defn solve-me-first
   "https://www.hackerrank.com/challenges/fp-solve-me-first"
