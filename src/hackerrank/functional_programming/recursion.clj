@@ -1,4 +1,4 @@
-(ns hackerrank.functional.recursion)
+(ns hackerrank.functional-programming.recursion)
 
 (defn divide 
   [x y]

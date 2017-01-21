@@ -1,4 +1,4 @@
-(ns hackerrank.memoization-dp)
+(ns hackerrank.functional-programming.memoization-dp)
 
 ;; http://rosettacode.org/wiki/Catalan_numbers#Clojure
 ;; http://www.geeksforgeeks.org/program-nth-catalan-number/
