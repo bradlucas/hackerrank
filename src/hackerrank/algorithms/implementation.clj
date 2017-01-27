@@ -69,3 +69,25 @@
                          )))))]
     ;; how many pairs do we have
     (apply + (map #(quot % 2) (map val m)))))
+
+
+(defn remove-nth [pos col]
+  (filter #(not= nil %) (mapv (fn [n] (if (not= pos n) (nth col (dec n)))) col)))
+
+(defn min-max-sum
+  [a]
+  ;; 1 2 3 4 5
+  ;; find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
+  (let [sums (map #(apply + %) (map #(remove-nth % a) (range 1 6)))]
+    [(apply min sums)
+     (apply max sums)]))
+
+(defn run
+  []
+  (let [rtn (min-max-sum [1 2 3 4 5])]
+    (println (format "%d" (first rtn)) (format "%d" (second rtn)))))
+
+(defn testing
+  []
+  (let [a [1 2 3 4 5]]
+    (min-max-sum a)))
