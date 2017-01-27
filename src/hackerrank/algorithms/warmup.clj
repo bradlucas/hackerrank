@@ -122,3 +122,26 @@
 
 ;; ((11 2 4) (4 5 6) (10 8 -12))
 
+
+(defn pp [num]
+  (format "%.6f" (float num)))
+
+(defn plus-minus
+  "https://www.hackerrank.com/challenges/plus-minus"
+  [a]
+  (let [len (count a)
+        pos (count (filter pos? a))
+        neg (count (filter #(< % 0) a))
+        zero (count (filter #(= 0 %) a))
+        p (/ pos len)
+        n (/ neg len)
+        z (/ zero len)]
+    (println (pp p))
+    (println (pp n))
+    (println (pp z))))
+
+
+(defn testing
+  []
+  (let [a [-4 3 -9 0 4 1]]
+    (plus-minus a)))
