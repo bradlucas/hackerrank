@@ -73,10 +73,32 @@
     [(apply min sums)
      (apply max sums)]))
 
+(defn min-max-sum
+  [col]
+  (let [sum (apply + col)
+        min (apply min col)
+        max (apply max col)]
+    [(- sum max) (- sum min)]))
+
+
+;; This one passes all the tests
+(defn min-max-sum
+  [col]
+  (loop [col col
+         sum 0
+         max-value 0
+         min-value 0]
+    (if (empty? col)
+      [(- sum max-value) (- sum min-value)]
+      (let [v (first col)]
+        (recur (rest col) (+' sum v) (max max-value v) (if (= min-value 0) v (min min-value v)))))))
+
 (defn run
   [a]
   (let [rtn (min-max-sum a)]
-    (println (format "%d" (first rtn)) (format "%d" (second rtn)))))
+    (println (first rtn) (second rtn))))
+
+
 
 
 ;; (run (mapv #(Integer/parseInt %) (clojure.string/split (clojure.string/trim (read-line)) #"\s+")))
