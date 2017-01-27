@@ -7,7 +7,7 @@
 
 ;; |--------------+----|
 ;; | Test Case #0 | OK |
-;; | Test Case #1 |    |
+;; | Test Case #1 | OK |
 ;; | Test Case #2 |    |
 ;; | Test Case #3 |    |
 ;; | Test Case #4 |    |
@@ -40,10 +40,6 @@
 ;; Assign weight to each node
 ;; Count total weight of each branch/tree from the root
 ;; The number of even weighted branches is the answer
-
-
-
-
 
 (defn build-edge [[a b]] 
   (let [rtn (if (not= a b)
@@ -83,7 +79,7 @@
         f (partial node-count graph)
         node-counts (map f (get-children graph 1))]
     ;; return the number of even counts
-    (count (filter even? node-counts))))
+    (apply + (map #(rem 2 %) (filter even? node-counts)))))
 
 
 (defn get-pair [] 
@@ -115,5 +111,7 @@
 
 ;; TESTING
 ;; (def g (build-graph [[2 1] [3 1] [4 3] [5 2] [6 1] [7 2] [8 6] [9 8] [10 8]]))
-;;
 ;; (process 10 [[2 1] [3 1] [4 3] [5 2] [6 1] [7 2] [8 6] [9 8] [10 8]])
+;;
+;; (def g (build-graph [[2,1],[3,1],[4,3],[5,2],[6,5],[7,1],[8,1],[9,2],[10,7],[11,10],[12,3],[13,7],[14,8],[15,12],[16,6],[17,6],[18,10],[19,1],[20,8]]))
+;; (process 10 [[2,1],[3,1],[4,3],[5,2],[6,5],[7,1],[8,1],[9,2],[10,7],[11,10],[12,3],[13,7],[14,8],[15,12],[16,6],[17,6],[18,10],[19,1],[20,8]])
