@@ -5,13 +5,9 @@
   [n]
   (cons n (lazy-seq (utopian-tree (if (even? n) (+ n 1) (* n 2))))))
 
-
 (defn last-height
   [cycles]
   (last (take (inc cycles) (utopian-tree 1))))
-
-
-
  
 (defn angry-professor
   "https://www.hackerrank.com/challenges/angry-professor"
@@ -25,8 +21,6 @@
     (if (< num-on-time-arrivals count-threshold)
       "YES"
       "NO")))
-
-
 
 ;; (let [t_t (read-line) 
 ;;       t (Integer/parseInt t_t)]
@@ -51,8 +45,6 @@
 ;;   ;; 
 ;;   (count (filter (fn [[a b]] (= a b)) (partition 2 (sort socks)))))
 
-
-
 (defn sock-merchant
   [socks]
   ;; how many pairs can you make
@@ -69,7 +61,6 @@
                          )))))]
     ;; how many pairs do we have
     (apply + (map #(quot % 2) (map val m)))))
-
 
 (defn remove-nth [pos col]
   (filter #(not= nil %) (mapv (fn [n] (if (not= pos n) (nth col (dec n)))) col)))
