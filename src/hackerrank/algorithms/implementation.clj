@@ -78,16 +78,16 @@
   [a]
   ;; 1 2 3 4 5
   ;; find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
-  (let [sums (map #(apply + %) (map #(remove-nth % a) (range 1 6)))]
+  (let [sums (map #(apply +' %) (map #(remove-nth % a) (range 1 6)))]
     [(apply min sums)
      (apply max sums)]))
 
 (defn run
-  []
-  (let [rtn (min-max-sum [1 2 3 4 5])]
+  [a]
+  (let [rtn (min-max-sum a)]
     (println (format "%d" (first rtn)) (format "%d" (second rtn)))))
 
-(defn testing
-  []
-  (let [a [1 2 3 4 5]]
-    (min-max-sum a)))
+
+;; (run (mapv #(Integer/parseInt %) (clojure.string/split (clojure.string/trim (read-line)) #"\s+")))
+
+
