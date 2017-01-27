@@ -43,9 +43,29 @@
 ;;       (recur (- a0 1) ))))
 
 
+;; This version only passed the initial test cases
+;; (defn sock-merchant
+;;   [socks]
+;;   ;; how many pairs can you make
+;;   ;; 10 20 20 10 10 30 50 10 20 -> 3
+;;   ;; 
+;;   (count (filter (fn [[a b]] (= a b)) (partition 2 (sort socks)))))
+
+
+
 (defn sock-merchant
   [socks]
   ;; how many pairs can you make
   ;; 10 20 20 10 10 30 50 10 20 -> 3
   ;; 
-  (count (filter (fn [[a b]] (= a b)) (partition 2 (sort socks)))))
+  (let [m (let [colors (set socks)]
+            (loop [colors colors
+                   rtn {}]
+              (if (empty? colors)
+                rtn
+                (recur (rest colors)
+                       (let [color (first colors)]
+                         (assoc rtn color (count (filter #(= color %) socks)))
+                         )))))]
+    ;; how many pairs do we have
+    (apply + (map #(quot % 2) (map val m)))))
