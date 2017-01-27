@@ -123,9 +123,6 @@
 ;; ((11 2 4) (4 5 6) (10 8 -12))
 
 
-(defn pp [num]
-  (format "%.6f" (float num)))
-
 (defn plus-minus
   "https://www.hackerrank.com/challenges/plus-minus"
   [a]
@@ -135,7 +132,8 @@
         zero (count (filter #(= 0 %) a))
         p (/ pos len)
         n (/ neg len)
-        z (/ zero len)]
+        z (/ zero len)
+        pp (fn [num] (format "%.6f" (float num)))]
     (println (pp p))
     (println (pp n))
     (println (pp z))))
