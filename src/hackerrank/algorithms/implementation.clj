@@ -41,3 +41,11 @@
 ;;               a (map #(Integer/parseInt %) a_t)]
 ;;           (println (angry-professor n k a))))
 ;;       (recur (- a0 1) ))))
+
+
+(defn sock-merchant
+  [socks]
+  ;; how many pairs can you make
+  ;; 10 20 20 10 10 30 50 10 20 -> 3
+  ;; 
+  (count (filter (fn [[a b]] (= a b)) (partition 2 (sort socks)))))
