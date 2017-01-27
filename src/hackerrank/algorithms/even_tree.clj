@@ -1,5 +1,25 @@
 (ns hackerrank.algorithms.even-tree)
 
+
+;; Even Tree
+;; https://www.hackerrank.com/challenges/even-tree
+
+
+;; |--------------+----|
+;; | Test Case #0 | OK |
+;; | Test Case #1 |    |
+;; | Test Case #2 |    |
+;; | Test Case #3 |    |
+;; | Test Case #4 |    |
+;; | Test Case #5 |    |
+;; | Test Case #6 |    |
+;; | Test Case #7 |    |
+;; | Test Case #8 |    |
+;; | Test Case #9 |    |
+;; |--------------+----|
+
+
+
 ;; Input
 ;; 10 9            - N number of vertices, M number of edges
 ;; 2 1             - Edges
