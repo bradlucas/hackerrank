@@ -17,6 +17,5 @@
   (format "%.2f" n))
 
 
-
 ;; (println (round-two-decimals (battery-life timeCharged)))
 
