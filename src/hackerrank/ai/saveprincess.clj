@@ -48,4 +48,5 @@
         grid (doall (repeatedly m read-line))]
     (process grid)))
 
-(run)
+;; (run)
+
