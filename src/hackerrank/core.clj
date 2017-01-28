@@ -5,9 +5,9 @@
   ;;           [hackerrank.functional.recursion.recursion :refer :all])
   (:require [hackerrank.algorithms.even-tree :as g]
             [hackerrank.ai.saveprincess :as s]
-            [hackerrank.ai.botclean :as b]
+            [hackerrank.ai.botcleanr :as b]
             )
   (:gen-class))
 
 (defn -main [& args]
-  (b/-main))
+  (b/run))
