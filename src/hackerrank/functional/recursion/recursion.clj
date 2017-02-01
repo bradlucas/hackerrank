@@ -124,3 +124,23 @@
   (clojure.string/join "" col))
 
 ;; (println (make-str (string-reductions (read-line))))
+
+
+(defn string-o-permute
+  "https://www.hackerrank.com/challenges/string-o-permute"
+  [s]
+  ;; for a even length string swap each pair
+
+  (apply str (flatten 
+              (map (fn [[a b]] [b a ]) (partition 2 (seq (char-array s)))))))
+
+(defn run-string-o-permute
+  []
+  (let [n_t (read-line) 
+        n (Integer/parseInt n_t)]
+    (loop [a0 n]
+      (when (> a0 0)
+        (let [x (read-line)]
+          (println (string-o-permute x)))
+        (recur (- a0 1))))))
+
