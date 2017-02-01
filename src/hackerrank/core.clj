@@ -6,8 +6,10 @@
   (:require [hackerrank.algorithms.even-tree :as g]
             [hackerrank.ai.saveprincess :as s]
             [hackerrank.ai.botcleanr :as b]
+            [hackerrank.functional.introduction.functions-or-not :as f]
+            [hackerrank.functional.introduction.area-of-a-polygon :as a]
             )
   (:gen-class))
 
 (defn -main [& args]
-  (b/run))
+  (a/run))
