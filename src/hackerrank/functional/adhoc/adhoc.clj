@@ -10,12 +10,25 @@
   [n m]
   (let [nm (* n m)]
     ;; NM * SUM(1, 1/2, 1/3, 1/4, ... 1/NM)
-    (double 
-     (* nm
-        (reduce + (map (fn [n] (/ 1 n)) (range 1 (inc nm))))
-      ))))
 
+    ;; (double (* nm (reduce + (map (fn [n] (/ 1 n)) (range 1 (inc nm))))))
 
+    (double (* nm (apply + (map (fn [n] (/ 1 n)) (range 1 (inc nm))))))
+    ))
+
+(defn bubble-wrap2
+  "https://www.hackerrank.com/challenges/kundu-and-bubble-wrap"
+  [n m]
+  (let [nm (* n m)]
+    ;; NM * SUM(1, 1/2, 1/3, 1/4, ... 1/NM)
+
+    (double ( * nm 
+                (loop [n nm
+                       acc 0]
+                  (if (zero? n)
+                    acc
+                    (recur (dec n) (+ acc (/ 1 n)))))
+                ))))
 
 (defn bubble-wrap2
   "https://www.hackerrank.com/challenges/kundu-and-bubble-wrap"
