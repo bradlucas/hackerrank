@@ -10,7 +10,8 @@
  
 (defn lcm 
       [a b]
-      (/ (* a b) (gcd a b)))
+      ;; (/ (* a b) (gcd a b)))
+      (* b (/ a (gcd a b))))
 
 
 
